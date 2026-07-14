@@ -4,8 +4,13 @@
 // Human human=(Human) request.getAttribute("human"); 
 String name;
 int age;
+try{
 name = (String) request.getAttribute("name");
 age = (int) request.getAttribute("age");
+}catch(Exception e){
+    name = "不明";
+    age = 0;
+}
 %>
 <!DOCTYPE html>
 <html lang="en">
