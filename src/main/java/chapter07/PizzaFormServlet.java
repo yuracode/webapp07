@@ -27,9 +27,11 @@ public class PizzaFormServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // Double.parseDouble(),Integer.parseInt()で文字列を数値に変換する際に、
+        // NumberFormatExceptionが発生する可能性があるため、try-catchで例外処理を行うことが望ましいです。
         double radius = Double.parseDouble(request.getParameter("radius"));
         int people = Integer.parseInt(request.getParameter("people"));
-
+        // できるだけ、ロジックはServletに書かず、別クラスに切り出すことが望ましいです。
         PizzaResult result = PizzaCalculator.calculate(radius, people);
 
         request.setAttribute("result", result);

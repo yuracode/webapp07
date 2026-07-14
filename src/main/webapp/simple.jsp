@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="model.Human" %>
-<% Human human=(Human) request.getAttribute("human"); %>
+<%
+// Human human=(Human) request.getAttribute("human"); 
+String name;
+int age;
+name = (String) request.getAttribute("name");
+age = (int) request.getAttribute("age");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +18,8 @@
 <body>
     <h1>フォワードの実験</h1>
     <p>このページは、SimpleServlet からフォワードされたページです。</p>
-    <p>フォワードされた人の名前は、<%= human.getName() %>です。</p>
-    <p>フォワードされた人の年齢は、<%= human.getAge() %>歳です。</p>
+    <p>フォワードされた人の名前は、<%= name %>です。</p>
+    <p>フォワードされた人の年齢は、<%= age %>歳です。</p>
 </body>
 
 </html>
