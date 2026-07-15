@@ -22,7 +22,17 @@ age = (int) request.getAttribute("age");
 
 <body>
     <h1>フォワードの実験</h1>
+    <%
+        if(name.equals("不明")){
+    %>
+    <p>このページは、simple.jsp が直接アクセスされたページです。</p>
+    <% 
+        }else{
+    %>
     <p>このページは、SimpleServlet からフォワードされたページです。</p>
+    <%
+        }
+    %>
     <p>フォワードされた人の名前は、<%= name %>です。</p>
     <p>フォワードされた人の年齢は、<%= age %>歳です。</p>
 </body>
